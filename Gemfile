@@ -69,3 +69,6 @@ gem 'sorcery'
 
 # redis導入
 gem 'redis-rails'
+
+# annotate
+gem 'annotate'
