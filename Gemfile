@@ -48,6 +48,8 @@ group :development do
   gem 'slim_lint', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'pry-byebug'
 end
 
 group :test do
