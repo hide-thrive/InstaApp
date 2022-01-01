@@ -46,6 +46,8 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'rubocop', require: false
   gem 'slim_lint', require: false
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do
@@ -70,5 +72,5 @@ gem 'sorcery'
 # redis導入
 gem 'redis-rails'
 
-# annotate
+# annotate導入
 gem 'annotate'
