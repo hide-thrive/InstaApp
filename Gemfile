@@ -61,3 +61,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # slim導入
 gem 'slim-rails'
 gem 'html2slim'
+
+# sorcery導入
+gem 'sorcery'

@@ -1,0 +1,8 @@
+= form_with scope: :session, local: true do |f|
+  .form-group
+    = f.label :email
+    = f.text_field :email
+  .form-group
+    = f.label :password
+    = f.password_field :password
+  f.submit ログイン
