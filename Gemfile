@@ -66,3 +66,6 @@ gem 'html2slim'
 
 # sorcery導入
 gem 'sorcery'
+
+# redis導入
+gem 'redis-rails'
