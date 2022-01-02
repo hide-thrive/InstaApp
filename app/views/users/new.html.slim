@@ -1,13 +1,22 @@
-h1 ユーザー登録画面
+h1.text-center.my-5 ユーザー登録画面
 
-= form_with model: @user, local: true do |f|
-  .form-group
-    = f.label :email
-    = f.text_field :email
-  .form-group
-    = f.label :password
-    = f.password_field :password
-  .form-group
-    = f.label :password_confirmation
-    = f.password_field :password_confirmation
-  = f.submit '登録'
+.mx-auto
+  = form_with model: @user, local: true do |f|
+    .form-group.pb-3
+      = f.label :name, class: "w-100"
+      = f.text_field :name, class: "w-100"
+    .form-group.pb-3
+      = f.label :email, class: "w-100"
+      = f.text_field :email, class: "w-100"
+    .form-group.pb-3
+      = f.label :password, class: "w-100"
+      = f.password_field :password, class: "w-100"
+    .form-group.pb-3
+      = f.label :password_confirmation, class: "w-100"
+      = f.password_field :password_confirmation, class: "w-100"
+    .form-group.text-center.pb-3
+      = f.submit '登録', class: "btn btn-primary btn-lg"
+    .card
+      .card-body
+        | アカウントをお持ちですか
+        = link_to 'ログインする', login_path

@@ -1,8 +1,16 @@
-= form_with scope: :session, local: true do |f|
-  .form-group
-    = f.label :email
-    = f.text_field :email
-  .form-group
-    = f.label :password
-    = f.password_field :password
-  = f.submit nil, class: 'btn btn-primary'
+h1.text-center.my-5 ログイン画面
+
+.mx-auto
+  = form_with url: login_path, local: true do |f|
+    .form-group.pb-3
+      = f.label :email, class: 'w-100'
+      = f.text_field :email, class: 'w-100'
+    .form-group.pb-3
+      = f.label :password, class: 'w-100'
+      = f.password_field :password, class: 'w-100'
+    .form-group.text-center.pb-3
+      = f.submit 'ログイン', class: 'btn btn-primary'
+    .card
+      .card-body
+        | アカウントをお持ちでないですか？
+        = link_to '登録する', new_user_path

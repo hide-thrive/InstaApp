@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  .container-fluid
+    = link_to 'InstaCloneApp', root_path, class: "navbar-brand"
+    button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+    .collapse.navbar-collapse#navbarNav.justify-content-end
+      ul.navbar-nav.ml-auto
+        - if current_user
+          li.nav-item
+            = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
+        li.nav-item
+          a.nav-link href="#"
+            | test
+        li.nav-item
+          a.nav-link href="#"
+            | test
