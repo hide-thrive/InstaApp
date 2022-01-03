@@ -76,3 +76,6 @@ gem 'redis-rails'
 
 # annotate導入
 gem 'annotate'
+
+# Faker導入
+gem 'faker'
