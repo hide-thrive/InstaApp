@@ -3,8 +3,8 @@ h1.text-center.my-5 ユーザー編集画面
 .mx-auto
   = form_with model: @user, local: true do |f|
     .form-group.pb-3
-      = f.label :images, 'プロフィール画像' , class: "w-100"
-      = f.file_field :images, class: "w-100"
+      = f.label :avatar, 'プロフィール画像' , class: "w-100"
+      = f.file_field :avatar, class: "w-100"
     .form-group.pb-3
       = f.label :name, 'お名前', class: "w-100"
       = f.text_field :name, class: "w-100"

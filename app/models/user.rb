@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   authenticates_with_sorcery!
+  mount_uploader :avatar, AvatarUploader
 
   validates :email, uniqueness: true, presence: true,
   length: { maximum: 255 },

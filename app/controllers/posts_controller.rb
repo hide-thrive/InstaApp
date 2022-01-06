@@ -14,7 +14,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
 
     if @post.save
       redirect_to @post, flash: {success: "投稿に成功しました。"}
@@ -44,10 +44,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:contet, :images)
+    params.require(:post).permit(:content, images: [])
   end
 
   def set_post
-    @post = Post.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 end
