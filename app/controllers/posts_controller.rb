@@ -38,7 +38,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post.destroy
-    redirect_to root_url, flash: {warning: "投稿を削除しました。"}
+    redirect_to posts_url, flash: {warning: "投稿を削除しました。"}
   end
 
   private

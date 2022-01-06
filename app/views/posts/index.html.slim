@@ -1,2 +1,14 @@
-h1 Posts#index
-p Find me in app/views/posts/index.html.slim
+h1.my-3.text-center 投稿一覧
+
+- @posts.each do |post|
+  .mx-auto.text-center.mb-3
+    .card.mb-3
+      .swiper.mySwiper
+        .swiper-wrapper
+          - post.images.each do |image|
+            .swiper-slide
+              = image_tag image.to_s
+      .swiper-button-next
+      .swiper-button-prev
+      .card-body
+        = post.content

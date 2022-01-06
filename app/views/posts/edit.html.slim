@@ -1,2 +1,13 @@
-h1 Posts#edit
-p Find me in app/views/posts/edit.html.slim
+h1.my-3.text-center 投稿編集
+
+.mx-auto
+  = form_with model: @post, local: true do |f|
+    .form-group.pb-3
+      = f.label :images, class: 'w-100'
+      = f.file_field :images, multiple: true, class: 'w-100'
+    .from-group.pb-3
+      = f.label :content, class: 'w-100'
+      = f.text_area :content, class: 'w-100'
+    .from-group.text-center
+      = f.submit '更新', class: 'btn btn-info btn-lg'
+
