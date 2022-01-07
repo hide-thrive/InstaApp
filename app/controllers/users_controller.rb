@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  protect_from_forgery
   skip_before_action :require_login, only: %i(new create)
   before_action :set_user, only: %i(show edit update destroy)
 
