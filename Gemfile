@@ -76,3 +76,17 @@ gem 'redis-rails'
 
 # annotate導入
 gem 'annotate'
+
+# Faker導入
+gem 'faker'
+
+# carrierwave導入
+gem 'carrierwave', '~> 2.0'
+gem 'mini_magick'
+
+# bootstrap
+gem 'jquery-rails'
+
+# font-awesome
+gem 'font-awesome-rails'
+gem 'font-awesome-sass', '~> 5.15.1'

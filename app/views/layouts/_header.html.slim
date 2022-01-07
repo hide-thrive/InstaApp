@@ -9,8 +9,6 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
           li.nav-item
             = link_to 'ログアウト', logout_path, method: :delete, class: 'nav-link'
         li.nav-item
-          a.nav-link href="#"
-            | test
+          = link_to '投稿一覧', posts_path, class: 'nav-link'
         li.nav-item
-          a.nav-link href="#"
-            | test
+          = link_to 'ユーザー一覧', users_path, class: 'nav-link'
