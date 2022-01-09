@@ -1,0 +1,21 @@
+h1.text-center.my-5 ユーザー編集画面
+
+.mx-auto
+  = form_with model: @user, local: true do |f|
+    .form-group.pb-3
+      = f.label :avatar, 'プロフィール画像' , class: "w-100"
+      = f.file_field :avatar, class: "w-100"
+    .form-group.pb-3
+      = f.label :name, 'お名前', class: "w-100"
+      = f.text_field :name, class: "w-100"
+    .form-group.pb-3
+      = f.label :email, 'メールアドレス' , class: "w-100"
+      = f.text_field :email, class: "w-100"
+    .form-group.pb-3
+      = f.label :password, 'パスワード' , class: "w-100"
+      = f.password_field :password, class: "w-100"
+    .form-group.pb-3
+      = f.label :password_confirmation, 'パスワード確認', class: "w-100"
+      = f.password_field :password_confirmation, class: "w-100"
+    .form-group.text-center.pb-3
+      = f.submit '更新', class: "btn btn-primary btn-lg"

@@ -1,0 +1,10 @@
+h1.text-center.my-5 ユーザー詳細
+
+div.card.border-info.mx-auto style="max-width: 540px;"
+  .row.g-0
+    .col-md-4.card-header
+      = image_tag @user.avatar.url, class: "w-100 h-100"
+    .col-md-8
+      .card-body
+        p.card-title style='font-size: 30px;'
+          = @user.name
