@@ -7,6 +7,8 @@ class PostsController < ApplicationController
   end
 
   def show
+    @comments = @post.comments.includes(:user).order(created_at: :desc)
+    @comment = Comment.new
   end
 
   def new

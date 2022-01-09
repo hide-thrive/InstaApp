@@ -1,0 +1,6 @@
+.mx-auto.text-center.my-3
+  = form_with model: [post, comment], class: 'js-form', remote: true do |f|
+    .form-group
+      = f.text_field :content
+    .form-group
+      = f.submit '投稿' , class: 'btn btn-info'
