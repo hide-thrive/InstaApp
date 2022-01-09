@@ -1,0 +1,12 @@
+h1.text-center.pt-3 新規投稿画面
+
+.mx-auto
+  = form_with model: @post, local: true do |f|
+    .form-group.pb-3
+      = f.label :images, class: 'w-100'
+      = f.file_field :images, multiple: true, class: 'w-100'
+    .from-group.pb-3
+      = f.label :content, class: 'w-100'
+      = f.text_area :content, class: 'w-100'
+    .from-group.text-center
+      = f.submit '投稿', class: 'btn btn-info btn-lg'

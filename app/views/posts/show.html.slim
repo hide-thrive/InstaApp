@@ -1,0 +1,18 @@
+h1.my-3.text-center 投稿詳細
+
+.mx-auto.text-center
+  .card.mb-3
+    .swiper.mySwiper
+      .swiper-wrapper
+        - @post.images.each do |image|
+          .swiper-slide
+            = image_tag image.to_s
+    .swiper-button-next
+    .swiper-button-prev
+    .card-body
+      .card-body
+        = @post.content
+
+- if current_user
+  = link_to '編集', edit_post_path(@post), class: 'btn btn-success'
+  = link_to '削除', post_path(@post), method: :delete, class: 'btn btn-danger', data: {confirm: '本当に削除しますか？'}
