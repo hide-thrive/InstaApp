@@ -3,7 +3,16 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(edit update destroy)
 
   def index
-    @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
+    @posts = 
+    if current_user
+      #フォローしているユーザーの投稿のみ表示
+      current_user.feed.includes(:user).page(params[:page]).order(created_at: :desc)
+    else
+      #全ての投稿表示
+      Post.all.includes(:user).page(params[:page]).order(created_at: :desc)
+    end
+    
+    @users = User.recent(5)
   end
 
   def show
