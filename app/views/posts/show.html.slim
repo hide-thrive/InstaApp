@@ -14,8 +14,14 @@ h1.my-3.text-center 投稿詳細
         = @post.content
 
 - if current_user
-  = link_to '編集', edit_post_path(@post), class: 'btn btn-success'
-  = link_to '削除', post_path(@post), method: :delete, class: 'btn btn-danger', data: {confirm: '本当に削除しますか？'}
+  = link_to edit_post_path(@post) do
+    = icon 'far', 'edit', class: 'fa-lg mr-3'
+  = link_to post_path(@post), method: :delete, data: {confirm: '本当に削除しますか？'}
+    = icon 'far', 'trash-alt', class: 'fa-lg'
+
+- if current_user && !current_user.own?(@post)
+  .ml-auto
+    = render 'like_area', post: @post
 
 ul.comments
   = render 'comments/comments', comments: @comments

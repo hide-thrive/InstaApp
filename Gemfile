@@ -88,8 +88,7 @@ gem 'mini_magick'
 gem 'jquery-rails'
 
 # font-awesome
-gem 'font-awesome-rails'
-gem 'font-awesome-sass', '~> 5.15.1'
+gem 'font-awesome-sass'
 
 # kaminari
 gem 'kaminari'

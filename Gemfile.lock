@@ -112,8 +112,6 @@ GEM
     faraday-patron (1.0.0)
     faraday-rack (1.0.0)
     ffi (1.15.4)
-    font-awesome-rails (4.7.0.8)
-      railties (>= 3.2, < 8.0)
     font-awesome-sass (5.15.1)
       sassc (>= 1.11)
     globalid (1.0.0)
@@ -337,8 +335,7 @@ DEPENDENCIES
   carrierwave (~> 2.0)
   chromedriver-helper
   faker
-  font-awesome-rails
-  font-awesome-sass (~> 5.15.1)
+  font-awesome-sass
   html2slim
   jbuilder (~> 2.5)
   jquery-rails
