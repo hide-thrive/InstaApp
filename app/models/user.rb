@@ -15,6 +15,14 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   has_many :like_posts, through: :likes, source: :post
 
+  has_many :follower, class_name: 'Relationship', foreign_key: 'follower_id', dependent: :destroy
+  has_many :followed, class_name: 'Relationship', foreign_key: 'followed_id', dependent: :destroy
+  has_many :following, through: :follower, source: :followed
+  has_many :followers, through: :followed, source: :follower
+
+  # Postcontroller#indexの@users取得(5)に使用
+  scope :recent, -> (count) { order(created_at: :desc).limit(count) }
+
   def own?(object)
     id == object.user_id
   end
@@ -29,6 +37,26 @@ class User < ApplicationRecord
 
   def unlike(post)
     like_posts.destroy(post)
+  end
+
+  # フォローしているユーザーのpostsを取得する
+  def feed
+    Post.where(user_id: following_ids << id)
+  end
+
+  # フォローする
+  def follow(other_user)
+    following << other_user
+  end
+
+  # フォロー解除
+  def unfollow(other_user)
+    following.destroy(other_user)
+  end
+
+  # フォローしているか?
+  def following?(other_user)
+    following.include?(other_user)
   end
 end
 
