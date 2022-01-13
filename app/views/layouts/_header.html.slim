@@ -4,6 +4,7 @@ nav.navbar.navbar-expand-lg.navbar-light.bg-light
     button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
       span.navbar-toggler-icon
     .collapse.navbar-collapse#navbarNav.justify-content-end
+      = render 'posts/search_form', search_form: @search_form
       ul.navbar-nav.ml-auto
         - if current_user
           li.nav-item
