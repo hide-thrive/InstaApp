@@ -54,6 +54,10 @@ class PostsController < ApplicationController
     redirect_to posts_url, flash: {warning: "投稿を削除しました。"}
   end
 
+  def search
+    @posts = @search_form.search.page(params[:page])
+  end
+
   private
 
   def post_params
