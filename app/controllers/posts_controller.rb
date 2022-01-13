@@ -1,14 +1,16 @@
 class PostsController < ApplicationController
   skip_before_action :require_login, only: %i(index)
-  before_action :set_post, only: %i(show edit update destroy)
+  before_action :set_post, only: %i(edit update destroy)
 
   def index
     @posts = Post.all.includes(:user).order(created_at: :desc).page(params[:page])
   end
 
   def show
+    @post = Post.find(params[:id])
     @comments = @post.comments.includes(:user).order(created_at: :desc)
     @comment = Comment.new
+    @like = Like.new
   end
 
   def new
